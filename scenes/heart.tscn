@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://cdwlliy56slcp"]
+
+[ext_resource type="Texture2D" uid="uid://b3trpqscoion3" path="res://assets/items/heart.png" id="1_dihb0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_84no2"]
+size = Vector2(73, 76)
+
+[node name="Heart" type="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(2, 2)
+texture = ExtResource("1_dihb0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-4, 11)
+shape = SubResource("RectangleShape2D_84no2")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+scale = Vector2(2, 2)
+polygon = PackedVector2Array(-2.9, -18, -1.5, -18, 3.4, -21, 11.4, -21, 18, -18.4, 18, -16.8, 25, -9.8, 25, 2, 23.4, 2, 21.4, 8, 19.8, 8, 10.8, 17, 8.5, 17, 1.5, 21, -3.3, 21, -8, 19.4, -8, 18, -25, 5, -25, 2.5, -28, -2.4, -28, -7.6, -20, -19, -17.5, -19, -17, -19.2, -17, -21.6)

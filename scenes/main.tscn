@@ -1,0 +1,28 @@
+[gd_scene load_steps=7 format=3 uid="uid://bua361mmaepj5"]
+
+[ext_resource type="PackedScene" uid="uid://dktxnnuxvu0h2" path="res://scenes/bg.tscn" id="1_0qocj"]
+[ext_resource type="Script" path="res://scripts/main.gd" id="1_ups3g"]
+[ext_resource type="PackedScene" uid="uid://dcakvnpln8yns" path="res://scenes/character.tscn" id="3_obkdd"]
+[ext_resource type="PackedScene" uid="uid://vnemnxed0gp4" path="res://scenes/ground.tscn" id="3_wo1rb"]
+[ext_resource type="PackedScene" uid="uid://bj8l04h80p337" path="res://scenes/hud.tscn" id="5_yw1mc"]
+[ext_resource type="PackedScene" uid="uid://drqqsmds851th" path="res://scenes/game_over.tscn" id="6_sugf2"]
+
+[node name="Main" type="Node"]
+script = ExtResource("1_ups3g")
+
+[node name="Bg" parent="." instance=ExtResource("1_0qocj")]
+
+[node name="Unicorn" parent="." instance=ExtResource("3_obkdd")]
+texture_filter = 1
+position = Vector2(191, 360)
+scale = Vector2(0.5, 0.5)
+
+[node name="Ground" parent="." instance=ExtResource("3_wo1rb")]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(960, 540)
+
+[node name="HUD" parent="." instance=ExtResource("5_yw1mc")]
+
+[node name="GameOver" parent="." instance=ExtResource("6_sugf2")]
+process_mode = 2

@@ -1,0 +1,46 @@
+[gd_scene load_steps=6 format=3 uid="uid://dktxnnuxvu0h2"]
+
+[ext_resource type="Texture2D" uid="uid://d3cf11yoxtkx5" path="res://assets/platformer_background_1/Layers/layer06_sky.png" id="1_05ohb"]
+[ext_resource type="Texture2D" uid="uid://kq57k1q74h5i" path="res://assets/platformer_background_1/Layers/layer05_rocks.png" id="2_2jv1b"]
+[ext_resource type="Texture2D" uid="uid://d21xaca34bvt1" path="res://assets/platformer_background_1/Layers/layer04_clouds.png" id="3_apljd"]
+[ext_resource type="Texture2D" uid="uid://cqfvruoxfk5fi" path="res://assets/platformer_background_1/Layers/layer03_trees.png" id="4_7k5bn"]
+[ext_resource type="Texture2D" uid="uid://c6otm8ibcnd73" path="res://assets/platformer_background_1/Layers/layer02_cake.png" id="5_idc7v"]
+
+[node name="Bg" type="ParallaxBackground"]
+scroll_offset = Vector2(1920, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_05ohb")
+centered = false
+
+[node name="Mountains" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.6, 1)
+motion_mirroring = Vector2(1920, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Mountains"]
+texture = ExtResource("2_2jv1b")
+centered = false
+
+[node name="Clouds" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.7, 1)
+motion_mirroring = Vector2(1920, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Clouds"]
+texture = ExtResource("3_apljd")
+centered = false
+
+[node name="Trees" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.8, 1)
+motion_mirroring = Vector2(1920, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Trees"]
+texture = ExtResource("4_7k5bn")
+centered = false
+
+[node name="Cake" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.9, 1)
+motion_mirroring = Vector2(1920, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Cake"]
+texture = ExtResource("5_idc7v")
+centered = false
