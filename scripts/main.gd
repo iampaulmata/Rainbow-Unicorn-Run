@@ -1,5 +1,7 @@
 extends Node
 
+var save_path = "user://variable.save"
+
 #preload obstacles
 var stump_scene = preload("res://scenes/stump.tscn")
 var rock_scene = preload("res://scenes/rock.tscn")
@@ -37,9 +39,10 @@ func _ready():
 	new_game()
 
 func new_game():
-	#reset variables
+	#reset variables and load high score if it exists
 	score = 0
 	show_score()
+	load_data()
 	game_running = false
 	get_tree().paused = false
 	#difficulty = 0
@@ -116,6 +119,7 @@ func hit_obs(body):
 		
 func game_over():
 	check_high_score()
+	save()
 	get_tree().paused = true
 	game_running = false
 	$GameOver.show()
@@ -127,3 +131,17 @@ func check_high_score():
 	if score > high_score:
 		high_score = score
 		$HUD.get_node("HighScoreLabel").text = "HIGH SCORE: " + str(high_score / SCORE_MODIFIER)
+		
+func save():
+	var file = FileAccess.open(save_path, FileAccess.WRITE)
+	file.store_var(high_score)
+	print("high score saved")
+func load_data():
+	if FileAccess.file_exists(save_path):
+		var file = FileAccess.open(save_path, FileAccess.READ)
+		high_score = file.get_var(high_score)
+		print(high_score)
+		$HUD.get_node("HighScoreLabel").text = "HIGH SCORE: " + str(high_score / SCORE_MODIFIER)
+	else:
+		print("No data saved...")
+		high_score = 0
