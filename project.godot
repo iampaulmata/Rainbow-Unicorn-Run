@@ -11,9 +11,14 @@ config_version=5
 [application]
 
 config/name="Rainbow Unicorn Run"
-run/main_scene="res://scenes/main.tscn"
+run/main_scene="res://scenes/title_screen.tscn"
 config/features=PackedStringArray("4.2", "Mobile")
+boot_splash/show_image=false
 config/icon="res://icon.svg"
+
+[autoload]
+
+Global="*res://scripts/Global.gd"
 
 [debug]
 

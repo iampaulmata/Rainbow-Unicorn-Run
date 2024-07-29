@@ -43,7 +43,7 @@ func new_game():
 	score = 0
 	show_score()
 	load_data()
-	game_running = false
+	game_running = true
 	get_tree().paused = false
 	#difficulty = 0
 	
@@ -59,8 +59,8 @@ func new_game():
 	$Ground.position = Vector2i(0, 0)
 	
 	#reset hud and game over screen
-	$HUD.get_node("StartLabel").show
 	$GameOver.hide()
+	#$HUD.get_node("StartLabel").show
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -136,6 +136,7 @@ func save():
 	var file = FileAccess.open(save_path, FileAccess.WRITE)
 	file.store_var(high_score)
 	print("high score saved")
+
 func load_data():
 	if FileAccess.file_exists(save_path):
 		var file = FileAccess.open(save_path, FileAccess.READ)

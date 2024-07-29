@@ -14,15 +14,15 @@ bg_color = Color(0.749559, 0.103427, 0.604846, 1)
 [node name="GameOver" type="CanvasLayer"]
 
 [node name="Button" type="Button" parent="."]
-anchors_preset = -1
-anchor_left = 0.546
+anchors_preset = 8
+anchor_left = 0.5
 anchor_top = 0.5
-anchor_right = 0.546
+anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -125.82
-offset_top = -15.5
-offset_right = 124.18
-offset_bottom = 39.5
+offset_left = -125.0
+offset_top = -35.0
+offset_right = 125.0
+offset_bottom = 35.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("1_dvk2y")

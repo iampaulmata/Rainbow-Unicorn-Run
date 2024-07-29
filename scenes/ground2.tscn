@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://dv12jo4w7bt7s"]
+
+[ext_resource type="Texture2D" uid="uid://c8n3cyddcvcbx" path="res://assets/platformer_background_3/Layers/layer01_wide_Ground.png" id="1_4o230"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lookl"]
+size = Vector2(3837, 186.5)
+
+[node name="Ground" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-4, 869)
+texture = ExtResource("1_4o230")
+centered = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1920, 994.75)
+shape = SubResource("RectangleShape2D_lookl")
